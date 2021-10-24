@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="anotherBean1" class="com.spring.AnotherBean">
+     <property name="name" value="홍길동"></property>
+     <property name="age" value="44"></property>
+</bean>
+<bean id="anotherBean2" class="com.spring.AnotherBean">
+     <property name="name" value="유관순"></property>
+     <property name="age" value="35"></property>
+</bean>
+     
+ <bean id="echoBean" class="com.spring.EchoBean">
+     <property name="map">
+        <map>
+           <entry key="one"> <ref bean="anotherBean1"></ref>
+           </entry>
+           <entry key="two"> <ref bean="anotherBean2"></ref>
+           </entry>
+        </map>
+     </property>
+ </bean>
+</beans>
