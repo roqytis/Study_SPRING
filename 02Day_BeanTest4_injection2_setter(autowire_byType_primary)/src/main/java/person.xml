@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="xx" class="com.spring.Cat" primary="true">
+    <constructor-arg name="catName" value="야옹이"></constructor-arg>
+    <constructor-arg name="catAge" value="10"></constructor-arg>
+</bean>
+
+<bean id="yy" class="com.spring.Cat">
+    <property name="catAge" value="20"></property>
+    <property name="catName" value="뭉크"></property>
+</bean>
+
+<bean id="onePerson" class="com.spring.Person" autowire="byType">
+<!-- 자동 연결 자동 주입 -->
+   <property name="usename" value="홍길동"></property>
+</bean>
+</beans>
