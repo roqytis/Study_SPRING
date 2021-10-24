@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;09Day6_MVC_JSON_RestFul_Method&apos;&#x0D;&#x0A;- Original project: &apos;09Day6_MVC_JSON_RestFul_Method&apos;&#x0D;&#x0A;- Original element: &apos;09Day6_MVC_JSON_RestFul_Method/src/main/java/com.app.app&apos;" description="Delete element" element1="/src\/main\/java&lt;com.app.app" element2="/src\/main\/java&lt;com.app" element3="/src\/main\/java&lt;com" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1631844093201" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,20 @@
+package com.dto;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("dept")
+public class DeptDTO {
+
+	public class DeptDTO{
+		int deptno;
+		String dname;
+		String loc;
+		
+	}
+
+	public DeptDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

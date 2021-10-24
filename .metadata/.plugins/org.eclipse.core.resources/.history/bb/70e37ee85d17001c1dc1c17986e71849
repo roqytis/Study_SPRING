@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+	$("#get").on("click", function() {
+		$.ajax({
+			url:"board",
+			type:"get", //post방식전송
+			dataType:"text",
+			success: function (data, status, xhr) {
+				console.log(data,"success");
+				},
+			error: function(xhr, status, error) {
+				console.log(error);
+			}			
+		});
+	});
+
+  </script>
+</head>
+<body>
+main.jsp<br>
+<button id="get">get</button>
+<button id="post">post</button>
+<button id="put">put</button>
+<button id="delete">delete</button>
+</body>
+</html>

@@ -1,0 +1,15 @@
+package com.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class TestContorller {
+ 
+	@RequestMapping(value = "/login" ,method = "get")
+	public String login() {
+		System.out.println("get방식으로 얻어오기");
+		return "loginForm";
+	}
+}

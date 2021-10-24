@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<context:property-placeholder location="com/congfig/jdbc,properties"/>
+		
+		<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" >
+	<property name="driverClassName" value="${oracle.jdbc}"></property>
+	<property name="url" value="${oracle.url}"></property>
+	<property name="username" value="${oracle.userid}"></property>
+	<property name="password" value="${oracle.password}"></property>
+</bean>
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+ 	<property name="dataSource" ref="myDataSource"></property>
+</bean>
+<tx:annotation-driven transaction-manager="txManager" />
+
+<bean id="SessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
+	<property name="dataSource" ref="dataSource"></property>
+	<property name="mapperLocations">
+		<list>
+			<value>classpath:com/config/DeptMapper.xml</value>
+		</list>
+	</property>
+<property name="typeAliases">
+		<list>
+			<value>com.dto.DeptDTO</value><!-- dto클래스에서 alias명 지정 @Alias('alias명')  -->
+		</list>
+	</property>
+</bean>
+<bean id="mySqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+<constructor-arg name="sqlSessionFactory" ref="mySqlSessionFactory"></constructor-arg>
+</bean>
+
+
+</beans>
